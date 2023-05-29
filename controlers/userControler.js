@@ -9,7 +9,7 @@ const { render } = require("../Routes/userRoute");
 //  Send the Varification email by multer.........................
 const sendverifyMail = async (fname, lastname, email, user_id) => {
   try {
-    var verificationLink = `https://college-iot-club-web.onrender.com/mailVerifyPage?id=${user_id}`;
+    // var verificationLink = `https://college-iot-club-web.onrender.com/mailVerifyPage?id=${user_id}`;
     // var verificationLink = `http://127.0.0.1:${process.env.PORT}/mailVerifyPage?id=${user_id}`;
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
@@ -65,7 +65,7 @@ const sendverifyMail = async (fname, lastname, email, user_id) => {
           <h1>Email Verification</h1>
           <p>Hello ${fname} ${lastname},</p>
           <p>Thank you for signing up. To verify your email, please click the button below:</p>
-          <a  href=${verificationLink} class="cta-button">Verify Email</a>
+          <a  href="https://college-iot-club-web.onrender.com/mailVerifyPage?id=${user_id}" class="cta-button">Verify Email</a>
         </div>
       </body>
       </html>
