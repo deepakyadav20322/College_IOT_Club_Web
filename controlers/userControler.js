@@ -65,7 +65,7 @@ const sendverifyMail = async (fname, lastname, email, user_id) => {
           <h1>Email Verification</h1>
           <p>Hello ${fname} ${lastname},</p>
           <p>Thank you for signing up. To verify your email, please click the button below:</p>
-          <a  href="${verificationLink}" class="cta-button">Verify Email</a>
+          <a  href=${verificationLink} class="cta-button">Verify Email</a>
         </div>
       </body>
       </html>
