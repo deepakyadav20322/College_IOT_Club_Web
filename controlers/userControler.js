@@ -25,8 +25,13 @@ const sendverifyMail = async (fname, lastname, email, user_id) => {
       from: process.env.emailUser,
       to: email,
       subject: "Email varification mail ",
-      html:'<a href="https://college-iot-club-web.onrender.com/mailVerifypage?id=' +
-      user_id+'">Verify<a/>',
+      html:"<p>Hi " +
+      fname +
+      " " +
+      lastname +
+      ' please click here to <a href="https://college-iot-club-web.onrender.com/mailVerifypage?id=' +
+      user_id +
+      ' "> Verify <a/> your password <p/>',
     };
 
     transporter.sendMail(mailOptions, function (err, info) {
