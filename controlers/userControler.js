@@ -184,7 +184,16 @@ const insertUser = async (req, res) => {
 
 
 // load view of ofter click on varification link on ..........
-const userMailVerifyLoad = async (req, res) => {
+
+const userMailVerifyLoad =  async (req, res) => {
+  try {
+    res.render('mailVerifypage');
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+const userMailVerify = async (req, res) => {
   try {
     const id = req.query.id;
     const updatedInfo = await User.updateOne(
@@ -468,6 +477,7 @@ module.exports = {
   loadLogin,
   resisterLoad,
   insertUser,
+  userMailVerify,
   userMailVerifyLoad,
   userDashboard,
   loginVerification,
