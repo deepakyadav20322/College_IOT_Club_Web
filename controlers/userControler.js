@@ -29,7 +29,7 @@ const sendverifyMail = async (fname, lastname, email, user_id) => {
       fname +
       " " +
       lastname +
-      ' please click here to <a href="https://college-iot-club-web.onrender.com/mailVerifyPage?id=' +
+      ' please click here to <a href="https://college-iot-club-web.onrender.com/mailVerifypage?id=' +
       user_id +
       ' "> Verify <a/> your email. <p/>',
     };
@@ -192,7 +192,7 @@ const userMailVerifyLoad = async (req, res) => {
       { _id: id },
       { $set: { is_varified: 1 } }
     );
-    res.render("mailVerifypage");
+    res.render("mailVerifyPage");
     console.log(updatedInfo);
   } catch (error) {
     console.log(error.message);
