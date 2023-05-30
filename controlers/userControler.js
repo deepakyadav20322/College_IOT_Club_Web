@@ -200,7 +200,7 @@ const userMailVerify = async (req, res) => {
       { _id: id },
       { $set: { is_varified: 1 } }
     );
-    res.render("mailVerifypage");
+    res.redirect("/mailVerifypage");
     console.log(updatedInfo);
   } catch (error) {
     console.log(error.message);
