@@ -29,7 +29,7 @@ const sendverifyMail = async (fname, lastname, email, user_id) => {
       fname +
       " " +
       lastname +
-      ' please click here to <a href="https://college-iot-club-web.onrender.com/mailVerifypage?id=' +
+      ' please click here to <a href="https://college-iot-club-web.onrender.com/mailVerifyPage?id=' +
       user_id +
       ' "> Verify <a/> your email. <p/>',
     };
@@ -185,15 +185,7 @@ const insertUser = async (req, res) => {
 
 // load view of ofter click on varification link on ..........
 
-const userMailVerifyLoad =  async (req, res) => {
-  try {
-    res.render('mailVerifypage');
-  } catch (error) {
-    console.log(error.message);
-  }
-}
-
-const userMailVerify = async (req, res) => {
+const userMailVerifyLoad = async (req, res) => {
   try {
     const id = req.query.id;
     const updatedInfo = await User.updateOne(
@@ -477,7 +469,6 @@ module.exports = {
   loadLogin,
   resisterLoad,
   insertUser,
-  userMailVerify,
   userMailVerifyLoad,
   userDashboard,
   loginVerification,
