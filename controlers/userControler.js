@@ -25,13 +25,51 @@ const sendverifyMail = async (fname, lastname, email, user_id) => {
       from: process.env.emailUser,
       to: email,
       subject: "Email varification mail ",
-      html:"<p>Hi " +
-      fname +
-      " " +
-      lastname +
-      ' please click here to <a href="https://college-iot-club-web.onrender.com/mailVerifypage?id=' +
-      user_id +
-      ' "> Verify <a/> your email. <p/>',
+      html:`
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>Email Verification</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+          }
+          .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+          }
+          h1 {
+            color: #333333;
+            font-size: 24px;
+            margin-top: 0;
+          }
+          p {
+            color: #666666;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+          .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border:2px solid #0D6EFD;
+            text-decoration: none;
+            border-radius: 5px;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h1>Email Verification</h1>
+          <p>Hello ${fname} ${lastname},</p>
+          <p>Thank you for signing up. To verify your email, please click the button below:</p>
+          <a href="https://college-iot-club-web.onrender.com/mailVerifypage?id=${user_id}" class="cta-button">Verify Email</a>
+        </div>
+      </body>
+      </html>
+    `   ,
     };
 
     transporter.sendMail(mailOptions, function (err, info) {
