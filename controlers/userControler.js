@@ -31,7 +31,7 @@ const sendverifyMail = async (fname, lastname, email, user_id) => {
       lastname +
       ' please click here to <a href="https://college-iot-club-web.onrender.com/mailVerifypage?id=' +
       user_id +
-      ' "> Verify <a/> your password <p/>',
+      ' "> Verify <a/> your email. <p/>',
     };
 
     transporter.sendMail(mailOptions, function (err, info) {

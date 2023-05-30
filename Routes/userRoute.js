@@ -72,7 +72,7 @@ user_Route.get('/login',userAuth.isLogout,userControler.loadLogin);
 user_Route.get('/resister',userAuth.isLogout,userControler.resisterLoad);
 user_Route.get('/userDashboard',userAuth.isLogin,userControler.userDashboard);
 user_Route.post('/resister',upload.single('image'),insertUserValidation,userControler.insertUser);
-user_Route.get('/mailVerifypage',userControler.userMailVerifyLoad);
+user_Route.post('/mailVerifypage',userControler.userMailVerifyLoad);
 user_Route.post('/login',userControler.loginVerification);
 user_Route.get('/sendForgetPassMail',userAuth.isLogout,userControler.sendForgetPassMail);
 user_Route.post('/sendForgetPassMail',userControler.forgetPassVarify);
