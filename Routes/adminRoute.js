@@ -8,7 +8,7 @@ const adminControler = require('../controlers/adminControler');
 const { addEventValidation } = require('../public/javascript/expressValidater'); 
 const { insertUserValidation } = require('../public/javascript/expressValidater'); 
 const { addGalleryValidation } = require('../public/javascript/expressValidater'); 
-
+  
 
 const session = require('express-session');
 const { dirname } = require("path");
